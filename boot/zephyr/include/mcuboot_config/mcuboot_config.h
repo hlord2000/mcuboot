@@ -199,6 +199,14 @@
 #define MCUBOOT_DECOMPRESS_IMAGES
 #endif
 
+#ifdef CONFIG_BOOT_DELTA_DFU
+#define MCUBOOT_DELTA_DFU
+#define MCUBOOT_DELTA_SECTOR_BUF_SIZE CONFIG_BOOT_DELTA_DFU_SECTOR_BUFFER_SIZE
+#ifdef CONFIG_BOOT_DELTA_DFU_RESTORE
+#define MCUBOOT_DELTA_DFU_RESTORE
+#endif
+#endif
+
 /* Invoke hashing functions directly on storage device. This requires the device
  * be able to map storage to address space or RAM.
  */
